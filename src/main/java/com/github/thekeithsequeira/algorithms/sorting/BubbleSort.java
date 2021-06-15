@@ -28,9 +28,14 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        System.out.println("BubbleSort:\nEnter the number of elements:");
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        int n;
+        if (args[0] != null)
+            n = Integer.parseInt(args[0]);
+        else {
+            System.out.println("BubbleSort:\nEnter the number of elements:");
+            Scanner scanner = new Scanner(System.in);
+            n = scanner.nextInt();
+        }
         Random random = new Random();
         int[] arr = random.ints(n, 0, 100).toArray();
         System.out.println("The generated elements are:" + Arrays.toString(arr));
